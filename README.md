@@ -52,4 +52,7 @@
   - Rezistențe  
 
 - **Software**:  
-  - Programare în C++ utilizând platforma Arduino IDE.  
+  - Programare în C++ utilizând platforma Arduino IDE.
+
+## Schema bloc
+*(https://wokwi.com/projects/417630519742962689)*
