@@ -97,5 +97,13 @@
 - **Software**:  
   - Programare în C++ utilizând platforma Arduino IDE.
 
+## Video Funcționalitate
+
+*(-----)*
+
+## Poze
+
+*(https://drive.google.com/drive/folders/1Ji01K1i7reiqXG-cKw6SJ4zzR3QWyqfR)*
+
 ## Schema bloc
 *(https://wokwi.com/projects/417630519742962689)*
