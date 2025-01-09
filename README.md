@@ -37,7 +37,53 @@
 - **Utilizarea butonului**:  
   - **Buton 1 - Start**:  
     - O apăsare pornește jocul.
-    - 
+
+## Flow-ul Jocului
+
+### 1. **Buton Start Apăsat**
+- Jocul începe atunci când butonul START este apăsat.
+- Este implementată o verificare anti-debounce pentru a preveni declanșările accidentale.
+
+### 2. **Countdown**
+- Pe LCD este afișată o numărătoare inversă de la 3 la 1 înainte de începerea rundei.
+
+### 3. **Afișarea Navei**
+- Nava jucătorului este afișată pe matricea LED, ocupând patru poziții (sus, jos, stânga, dreapta).
+
+### 4. **Generarea Meteoriților**
+- Un număr aleator de meteoriți este generat și poziționat pe prima linie a matricei LED.
+- Pozițiile sunt unice și nu există suprapuneri între meteoriți.
+
+### 5. **Controlul Navei**
+- **Joystick pentru mișcare:**
+  - Mișcarea joystick-ului în stânga sau dreapta deplasează nava pe matrice, respectând limitele (coloanele 0 și 7).
+- **Joystick pentru tragere:**
+  - Mișcarea joystick-ului în sus trage un glonț care urcă matricea.
+  - Dacă glonțul lovește un meteorit, acesta este distrus, iar glonțul dispare.
+
+### 6. **Meteoriții Cad**
+- Meteoriții se deplasează treptat în jos, rând cu rând, în funcție de viteza rundei curente.
+- Pentru fiecare meteorit, se verifică:
+  - **Coliziune cu nava:**
+    - Dacă un meteorit atinge o poziție ocupată de navă (sus, jos, stânga, dreapta), o viață este pierdută, iar meteoritul dispare.
+  - **Depășirea matricei:**
+    - Dacă un meteorit ajunge sub ultima linie a matricei fără să fie distrus, o viață este pierdută.
+
+### 7. **Actualizarea Vieților**
+- Viețile rămase sunt afișate pe LCD sub formă de inimioare.
+- Dacă viețile ajung la 0, jocul se termină.
+
+### 8. **Finalizarea Rundei**
+- Runda se încheie dacă toți meteoriții sunt distruși sau au părăsit matricea (cu pierderile de vieți corespunzătoare).
+- Jocul trece la următoarea rundă, care include mai mulți meteoriți și o viteză mai mare de cădere.
+
+### 9. **Finalul Jocului**
+- **Victorie:** Dacă toate rundele sunt completate fără pierderea tuturor vieților, pe LCD apare mesajul: **„FELICITĂRI! Ai câștigat!”**
+- **Înfrângere:** Dacă viețile ajung la 0 în orice moment, pe LCD apare mesajul: **„Ai pierdut!”**, iar jocul se oprește.
+
+### 10. **Reînceperea Jocului**
+- După finalizarea jocului, jucătorul poate apăsa butonul START pentru a începe o nouă sesiune.
+
 ## Tehnologii utilizate  
 - **Hardware**:
   - Arduino Uno  
